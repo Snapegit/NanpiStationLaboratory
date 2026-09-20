@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.KeyanrenyuanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.KeyanrenyuanEntity" id="keyanrenyuanMap">
+        <result property="keyanzhanghao" column="keyanzhanghao"/>
+        <result property="keyanmima" column="keyanmima"/>
+        <result property="keyanrenyuanxingming" column="keyanrenyuanxingming"/>
+        <result property="touxiang" column="touxiang"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="shoujihaoma" column="shoujihaoma"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.KeyanrenyuanView" >
+
+		SELECT  keyanrenyuan.* FROM keyanrenyuan  keyanrenyuan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.KeyanrenyuanView" >
+		SELECT * FROM keyanrenyuan  keyanrenyuan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

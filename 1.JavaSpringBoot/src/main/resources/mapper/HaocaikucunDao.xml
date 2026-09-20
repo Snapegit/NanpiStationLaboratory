@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.HaocaikucunDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.HaocaikucunEntity" id="haocaikucunMap">
+        <result property="cailiaobianhao" column="cailiaobianhao"/>
+        <result property="cailiaomingcheng" column="cailiaomingcheng"/>
+        <result property="cailiaoguige" column="cailiaoguige"/>
+        <result property="shengchanchangjia" column="shengchanchangjia"/>
+        <result property="goumairiqi" column="goumairiqi"/>
+        <result property="baozhiqi" column="baozhiqi"/>
+        <result property="cailiaoyongtu" column="cailiaoyongtu"/>
+        <result property="shuliang" column="shuliang"/>
+        <result property="shiyongjilu" column="shiyongjilu"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.HaocaikucunView" >
+
+		SELECT  haocaikucun.* FROM haocaikucun  haocaikucun 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.HaocaikucunView" >
+		SELECT * FROM haocaikucun  haocaikucun <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
